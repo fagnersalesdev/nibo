@@ -1,5 +1,0 @@
----
-"nibo": patch
----
-
-Initial commit
