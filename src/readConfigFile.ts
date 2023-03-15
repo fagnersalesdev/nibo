@@ -4,7 +4,7 @@ import { configSchema, NiboConfig } from './types/NiboConfig'
 import { brand } from './utils/brand'
 
 export function readConfigFile(folder: string, extension: '.js' | '.ts'): NiboConfig {
-  const path = join(process.cwd(), `${folder}/nibo.config${extension}`)
+  const path = join(process.cwd(), folder, `nibo.config${extension}`)
 
   console.log(`${brand} Reading config file at ${path}`)
 
