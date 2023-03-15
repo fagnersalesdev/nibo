@@ -1,0 +1,27 @@
+import type { NiboCommandBuilder } from 'nibo'
+import { SlashCommandStringOption } from 'discord.js'
+
+const config: NiboCommandBuilder = {
+  name: 'hello',
+  description: 'Say hello to someone!',
+  timeout: {
+    time: 30_000,
+    on(interaction, timeLeftInMilisseconds) {
+      const seconds = Math.ceil(timeLeftInMilisseconds / 1000)
+
+      interaction.reply(`Espere pelo menos ${seconds} segundos antes de usar o comando novamente.`)
+    }
+  },
+  onRunning(interaction, where) {
+    const url = where.message.url
+    interaction.reply(`Você já está executando este comando! [Clique aqui para ir até ele](${url})`)
+  },
+  options: [
+    new SlashCommandStringOption()
+      .setName('text')
+      .setDescription('Something else to say')
+      .setRequired(true)
+  ]
+}
+
+export default config

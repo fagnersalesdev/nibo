@@ -1,0 +1,8 @@
+import { NiboCommand } from 'nibo'
+
+const Command: NiboCommand = async ({ interaction }) => {
+  const text = interaction.options.getString('text', true)
+  interaction.reply(`Hello World and ... ${text}`)
+}
+
+export default Command

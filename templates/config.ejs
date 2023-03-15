@@ -1,0 +1,11 @@
+import { NiboConfig } from 'nibo'
+
+const niboConfig: NiboConfig = {
+  "bot_token": "your token here",
+  "bot_id": "client id",
+  async afterLogin(client) {
+    console.log(`${client.user?.username} is ready from Nibo!`)
+  }
+}
+
+export default niboConfig

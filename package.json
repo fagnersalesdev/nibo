@@ -8,22 +8,33 @@
   "scripts": {
     "dev": "vitest",
     "test": "vitest run",
-    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "build": "tsup src --format cjs,esm --dts",
     "lint": "tsc",
     "ci": "pnpm run lint && pnpm run test && pnpm run build",
     "release": "pnpm run lint && pnpm run test && pnpm run build && changeset publish"
+  },
+  "bin": {
+    "nibo": "bin/nibo"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
+    "@types/ejs": "^3.1.2",
+    "@types/inquirer": "^9.0.3",
     "@types/node": "^18.14.0",
     "tsup": "^6.6.3",
     "typescript": "^4.9.5",
     "vitest": "^0.28.5"
   },
   "dependencies": {
-    "discord.js": "^14.7.1"
+    "axios": "^1.3.4",
+    "chalk": "^4",
+    "discord.js": "^14.7.1",
+    "ejs": "^3.1.8",
+    "inquirer": "^9.1.4",
+    "ts-node": "^10.9.1",
+    "zod": "^3.20.6"
   }
 }
