@@ -28,7 +28,8 @@ export async function run(args: string[]) {
       "strict": true,
       "skipLibCheck": true,
       "noEmit": true,
-    }
+    },
+    transpileOnly: true,
   })
 
   if (name === CommandNames.ReloadCommands) return reloadCommands(folder, extension)
